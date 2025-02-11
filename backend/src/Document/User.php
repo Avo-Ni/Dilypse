@@ -21,11 +21,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private string $password;
 
     #[ODM\Field(type: 'collection')]
-    private array $roles = ['ROLE_USER']; // Ajouter ROLE_USER comme rôle par défaut
+    private array $roles = ['ROLE_USER'];
 
     public function __construct()
     {
-        // Définir le rôle par défaut au cas où il serait vide
         if (empty($this->roles)) {
             $this->roles[] = 'ROLE_USER';
         }
