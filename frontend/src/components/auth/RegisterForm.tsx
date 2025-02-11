@@ -21,7 +21,7 @@ export const RegisterForm = () => {
         event.preventDefault();
 
         try {
-            await register(formData);  
+            await register(formData);
             setFormData({ username: '', password: '' });
         } catch (error) {
         }
